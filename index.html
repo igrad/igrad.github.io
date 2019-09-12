@@ -1,1 +1,64 @@
-Initial build
+<!DOCTYPE HTML>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title>Ian Gradert</title>
+
+   <link rel="stylesheet" href="css/index.css">
+
+   <script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+   </script>
+</head>
+
+<body>
+   <div id="frame_welcome" class="pageframe">
+      <div id="welcome_container">
+         <a id="welcome_msg">Hi, I'm Ian.</a>
+         <br/>
+         <br/>
+         <br/>
+      </div>
+      <div id="joke1" next="joke2" class="joke_btn">&#62;</div>
+      <div id="joke2" next="joke3" class="joke_btn">and</div>
+      <div id="joke3" next="joke4" class="joke_btn">I'm</div>
+      <div id="joke4" next="joke5" class="joke_btn">good</div>
+      <div id="joke5" next="joke6" class="joke_btn">at</div>
+      <div id="joke6" next="joke7" class="joke_btn">designing</div>
+      <div id="joke7" next="joke8" class="joke_btn">things</div>
+      <div id="joke8" class="joke_btn">&#62;</div>
+   </div>
+
+   <script>
+      $(document).ready(function() {
+         $(".joke_btn").mouseenter(function() {
+            var next = $("#" + $(this).attr("next"));
+            next.css("display", "block");
+            var me = $(this);
+            var id = me.attr("id");
+
+            if (id < "joke8") {
+               next.css("left", me.position().left +
+               parseInt(me.css("width")) +
+               2 * parseInt(me.css("padding-left")) +
+               2 * parseInt(me.css("border-left-width")));
+            } else {
+               next.css("right", me.position().left +
+               parseInt(me.css("width")) +
+               2 * parseInt(me.css("padding-left")) +
+               2 * parseInt(me.css("border-left-width")));
+            }
+
+            if (id < "joke6") {
+               next.css("top", parseInt(me.css("top")));
+            } else if (id == "joke6") {
+               next.css("top", parseInt(me.css("top")) -
+               parseInt(me.css("height")));
+            }
+         });
+      });
+   </script>
+</body>
+
+</html>
