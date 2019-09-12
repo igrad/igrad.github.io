@@ -33,29 +33,51 @@
    <script>
       $(document).ready(function() {
          $(".joke_btn").mouseenter(function() {
+				// Helper vars
             var next = $("#" + $(this).attr("next"));
             next.css("display", "block");
             var me = $(this);
-            var id = me.attr("id");
+            var id = "#" + me.attr("id");
 
-            if (id < "joke8") {
-               next.css("left", me.position().left +
-               parseInt(me.css("width")) +
-               2 * parseInt(me.css("padding-left")) +
-               2 * parseInt(me.css("border-left-width")));
+				// Little lambda to avoid syntax hell
+				var getProp = (itemID, prop) => {
+					return parseInt($(itemID).css(prop));
+				};
+
+				// pivot points
+				var pivot1;
+				var pivot2;
+
+				// Left edge X coord of the next node (prediction)
+				var nextLeft = me.position().left + getProp(id, "width") +
+					2 * getProp(id, "padding-left") +
+					2 * getProp(id, "border-left-width");
+				// Right edge X coord of next node (prediction)
+				var nextRight = nextLeft + getProp(next.attr("id"), "width");
+
+				// If the predicted right edge is OOB on X, rotate by 90 degrees
+				// Set horizontal edge
+            if (nextRight >= getProp("body", "width") * 0.9) {
+               next.css("right", me.position().left + getProp(id, "width") +
+               2 * getProp(id, "padding-left") +
+               2 * getProp(id, "border-left-width"));
             } else {
-               next.css("right", me.position().left +
-               parseInt(me.css("width")) +
-               2 * parseInt(me.css("padding-left")) +
-               2 * parseInt(me.css("border-left-width")));
+               next.css("left", me.position().left + getProp(id, "width") +
+               2 * getProp(id, "padding-left") +
+               2 * getProp(id, "border-left-width"));
+
+					pivot1 = id;
+					pivot2 = "#" + $(id).attr("next");
             }
 
-            if (id < "joke6") {
-               next.css("top", parseInt(me.css("top")));
-            } else if (id == "joke6") {
-               next.css("top", parseInt(me.css("top")) -
-               parseInt(me.css("height")));
-            }
+				// Set vertical edge
+            if (id == pivot1) {
+					next.css("top", getProp(id, "top") - getProp(id, "height"));
+            } else if (id >= pivot2) {
+               next.css("bottom", getProp(id, "bottom"));
+            } else {
+					next.css("top", getProp(id, "top"));
+				}
          });
       });
    </script>

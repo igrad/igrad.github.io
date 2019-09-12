@@ -19,6 +19,7 @@ body {
 }
 
 #frame_welcome {
+
 }
 
 #welcome_container {
@@ -61,7 +62,7 @@ body {
 }
 
 #joke1 {
-   left: calc(50% - 8px);
+   left: calc(50% - 8px - 2px - 12px); /* page margin, border, and padding */
 
    display: block;
 }
