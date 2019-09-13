@@ -7,6 +7,7 @@
 
    <link rel="stylesheet" href="css/index.css">
    <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/body.css">
 
    <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
@@ -33,44 +34,62 @@
       <div id="shelf_wrapper">
          <div id="shelf">
 
-            <div id="name" class="shelfdiv">
+            <div id="name" class="shelfglow" onmousedown="GoToHome();">
                <div id="name_inner">Ian Gradert</div>
             </div>
 
-            <div id="menu" class="shelfdiv">
-               <div class="menu_btn_container">
-                  <div id="menu_posts" class="menu_btn">Posts</div>
+            <div id="menu">
+               <div class="menu_btn_container shelfglow">
+                  <div id="menu_posts" class="menu_btn" onmousedown="GoToPosts();">
+                     Posts
+                  </div>
                </div>
-               <div class="menu_btn_container">
-                  <div id="menu_projects" class="menu_btn">Projects</div>
+               <div class="menu_btn_container shelfglow">
+                  <div id="menu_projects" class="menu_btn" onmousedown="GoToProjects();">
+                     Projects
+                  </div>
                </div>
-               <div class="menu_btn_container">
-                  <div id="menu_resume" class="menu_btn">Resume</div>
+               <div class="menu_btn_container shelfglow">
+                  <div id="menu_resume" class="menu_btn" onmousedown="GoToResume();">
+                     Resume
+                  </div>
                </div>
             </div>
 
          </div>
       </div>
 
-      <div class="pad"></div>
 
       <div id="body_wrapper">
 
-         <div id="index" class="bodydiv">
-            1.
-            <br/>
-            2.
-            <br/>
-            3.
+         <div id="body_home" class="body_container">
+
          </div>
 
-         <div id="postbody" class="bodydiv">
-            Lorem ipsum boogie bang
+         <div id="body_posts" class="body_container">
+            <div id="posts_index" class="bodydiv">
+               1.
+               <br/>
+               2.
+               <br/>
+               3.
+            </div>
+
+            <div id="posts_body" class="bodydiv">
+               Lorem ipsum boogie bang
+            </div>
+         </div>
+
+         <div id="body_projects" class="body_container">
+         </div>
+
+         <div id="body_resume" class="body_container">
          </div>
 
       </div>
 
-      <div class="pad"></div>
+      <div id="pad_left" class="pad"></div>
+      <div id="pad_right" class="pad"></div>
 
    </div>
 
@@ -130,6 +149,12 @@
                $(this).attr("set", "true");
             }
          });
+
+         $(".shelfglow").hover(function() {
+            $(this).css("box-shadow", "0px 1px white");
+         }, function () {
+            $(this).css("box-shadow", "0px 1px gray");
+         });
       });
 
       function PassWelcome() {
@@ -146,6 +171,26 @@
             opacity: 1.00
          }, 200);
       };
+
+      function GoToHome() {
+         $(".body_container").css("display", "none");
+         $("#body_home").css("display", "block");
+      }
+
+      function GoToPosts() {
+         $(".body_container").css("display", "none");
+         $("#body_posts").css("display", "grid");
+      }
+
+      function GoToProjects() {
+         $(".body_container").css("display", "none");
+         $("#body_projects").css("display", "block");
+      }
+
+      function GoToResume() {
+         $(".body_container").css("display", "none");
+         $("#body_resume").css("display", "block");
+      }
    </script>
 </body>
 
