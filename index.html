@@ -34,23 +34,23 @@
       <div id="shelf_wrapper">
          <div id="shelf">
 
-            <div id="name" class="shelfglow" onmousedown="GoToHome();">
+            <div id="name" class="shelfglow" onmouseup="GoToHome();">
                <div id="name_inner">Ian Gradert</div>
             </div>
 
             <div id="menu">
                <div class="menu_btn_container shelfglow">
-                  <div id="menu_posts" class="menu_btn" onmousedown="GoToPosts();">
+                  <div id="menu_posts" class="menu_btn" onmouseup="GoToPosts();">
                      Posts
                   </div>
                </div>
                <div class="menu_btn_container shelfglow">
-                  <div id="menu_projects" class="menu_btn" onmousedown="GoToProjects();">
+                  <div id="menu_projects" class="menu_btn" onmouseup="GoToProjects();">
                      Projects
                   </div>
                </div>
                <div class="menu_btn_container shelfglow">
-                  <div id="menu_resume" class="menu_btn" onmousedown="GoToResume();">
+                  <div id="menu_resume" class="menu_btn" onmouseup="GoToResume();">
                      Resume
                   </div>
                </div>
@@ -158,7 +158,7 @@
       });
 
       function PassWelcome() {
-         $("#frame_main").css("display", "block");
+         $("#frame_main").css("display", "grid");
          $("#frame_main").css("opacity", "0.00");
 
          $("#frame_welcome").animate({

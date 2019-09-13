@@ -68,7 +68,7 @@ body {
 
    box-shadow: 4px 4px #111111;
 
-   cursor: pointer;
+   cursor: default;
 
    display: none;
 }
@@ -85,4 +85,8 @@ body {
    left: calc(50% - 8px - 2px - 12px); /* page margin, border, and padding */
 
    display: block;
+}
+
+#joke8 {
+   cursor: pointer;
 }
