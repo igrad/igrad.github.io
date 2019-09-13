@@ -1,3 +1,7 @@
+html {
+   width: 100%;
+   height: 100%;
+}
 
 body {
    width: calc(100% - 16px);
@@ -11,6 +15,8 @@ body {
    cursor: default;
 
    font-family: Palatino Linotype;
+
+   overflow: hidden;
 }
 
 .pageframe {
@@ -19,7 +25,7 @@ body {
 }
 
 #frame_welcome {
-
+   user-select: none;
 }
 
 #welcome_container {
@@ -29,13 +35,14 @@ body {
    height: min-content;
 
    margin: auto;
-   padding-top: calc(50% - 16px - 2em);
+   top: calc(40% - 16px - 2em);
 }
 
 #welcome_msg {
    position: relative;
 
    font-size: 4em;
+   text-shadow: 8px 8px #101010;
    white-space: nowrap;
 }
 
@@ -61,13 +68,16 @@ body {
    display: none;
 }
 
+.joke90 {
+   transform: rotate(90deg);
+   transform-origin: 0% 100%;
+}
+
 #joke1 {
+   position: absolute;
+
+   top: calc(56% - 16px - 2em);
    left: calc(50% - 8px - 2px - 12px); /* page margin, border, and padding */
 
    display: block;
-}
-
-#joke6 {
-   transform: rotate(90deg);
-   transform-origin: 0% 100%;
 }

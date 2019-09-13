@@ -16,70 +16,87 @@
    <div id="frame_welcome" class="pageframe">
       <div id="welcome_container">
          <a id="welcome_msg">Hi, I'm Ian.</a>
-         <br/>
-         <br/>
-         <br/>
       </div>
-      <div id="joke1" next="joke2" class="joke_btn">&#62;</div>
-      <div id="joke2" next="joke3" class="joke_btn">and</div>
-      <div id="joke3" next="joke4" class="joke_btn">I'm</div>
-      <div id="joke4" next="joke5" class="joke_btn">good</div>
-      <div id="joke5" next="joke6" class="joke_btn">at</div>
-      <div id="joke6" next="joke7" class="joke_btn">designing</div>
-      <div id="joke7" next="joke8" class="joke_btn">things</div>
-      <div id="joke8" class="joke_btn">&#62;</div>
+      <div id="joke1" next="joke2" set="false" class="joke_btn">&#62;</div>
+      <div id="joke2" next="joke3" set="false" class="joke_btn">and</div>
+      <div id="joke3" next="joke4" set="false" class="joke_btn">I'm</div>
+      <div id="joke4" next="joke5" set="false" class="joke_btn">good</div>
+      <div id="joke5" next="joke6" set="false" class="joke_btn">at</div>
+      <div id="joke6" next="joke7" set="false" class="joke_btn">designing</div>
+      <div id="joke7" next="joke8" set="false" class="joke_btn">things</div>
+      <div id="joke8" set="false" onclick="PassWelcome();"
+      class="joke_btn">&#62;</div>
+   </div>
+
+   <div id="frame_main" class="pageframe">
+      
    </div>
 
    <script>
       $(document).ready(function() {
+         // Pivot element
+         var pivot = false;
+
          $(".joke_btn").mouseenter(function() {
-				// Helper vars
-            var next = $("#" + $(this).attr("next"));
-            next.css("display", "block");
-            var me = $(this);
-            var id = "#" + me.attr("id");
+            if ($(this).attr("set") == "false") {
+               // Little lambda to avoid syntax hell
+               var getProp = (itemID, prop) => {
+                  return parseInt($(itemID).css(prop));
+               };
 
-				// Little lambda to avoid syntax hell
-				var getProp = (itemID, prop) => {
-					return parseInt($(itemID).css(prop));
-				};
+               console.log("Doing stuff");
+   				// Helper vars
+               var next = $("#" + $(this).attr("next"));
+               var nextid = "#" + next.attr("id");
+               var me = $(this);
+               var id = "#" + me.attr("id");
+               var myWidth = getProp(id, "width") +
+                  2 * getProp(id, "padding-left") +
+                  2 * getProp(id, "border-left-width");
+               next.css("display", "block");
 
-				// pivot points
-				var pivot1;
-				var pivot2;
+   				// Left edge X coord of the next node (prediction)
+   				var nextLeft = me.position().left + myWidth;
 
-				// Left edge X coord of the next node (prediction)
-				var nextLeft = me.position().left + getProp(id, "width") +
-					2 * getProp(id, "padding-left") +
-					2 * getProp(id, "border-left-width");
-				// Right edge X coord of next node (prediction)
-				var nextRight = nextLeft + getProp(next.attr("id"), "width");
+   				// Right edge X coord of next node (prediction)
+   				var nextRight = nextLeft + getProp(nextid, "width");
 
-				// If the predicted right edge is OOB on X, rotate by 90 degrees
-				// Set horizontal edge
-            if (nextRight >= getProp("body", "width") * 0.9) {
-               next.css("right", me.position().left + getProp(id, "width") +
-               2 * getProp(id, "padding-left") +
-               2 * getProp(id, "border-left-width"));
-            } else {
-               next.css("left", me.position().left + getProp(id, "width") +
-               2 * getProp(id, "padding-left") +
-               2 * getProp(id, "border-left-width"));
+   				// Set horizontal edge
+               if (!pivot) {
+                  next.css("left", me.position().left + myWidth);
+               } else {
+                  next.css("left", me.position().left);
+               }
 
-					pivot1 = id;
-					pivot2 = "#" + $(id).attr("next");
+               // Set vertical edge
+               if (pivot) {
+                  console.log("pivot1");
+   					next.css("top", getProp(id, "top") + myWidth);
+               } else {
+                  console.log("else...");
+   					next.css("top", getProp(id, "top"));
+   				}
+
+               if (nextRight > getProp("body", "width") * 0.95) {
+                  // If the predicted right edge is OOB on X,
+                  // rotate by 90 degrees
+                  console.log("OOB");
+                  if (!pivot) pivot = true;
+                  next.addClass("joke90");
+               }
+
+               $(this).attr("set", "true");
             }
-
-				// Set vertical edge
-            if (id == pivot1) {
-					next.css("top", getProp(id, "top") - getProp(id, "height"));
-            } else if (id >= pivot2) {
-               next.css("bottom", getProp(id, "bottom"));
-            } else {
-					next.css("top", getProp(id, "top"));
-				}
          });
       });
+
+      function PassWelcome() {
+         $("#frame_welcome").animate({
+            opacity: 0.00
+         }, 200, function () {
+            $("#frame_welcome").css("display", "none");
+         });
+      };
    </script>
 </body>
 
