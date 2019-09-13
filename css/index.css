@@ -26,6 +26,11 @@ body {
 
 #frame_welcome {
    user-select: none;
+   display: none;                         /* Remove this later */
+}
+
+#frame_main {
+   display: block;                        /* Remove this later */
 }
 
 #welcome_container {

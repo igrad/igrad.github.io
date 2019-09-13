@@ -6,6 +6,7 @@
    <title>Ian Gradert</title>
 
    <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/main.css">
 
    <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
@@ -29,7 +30,48 @@
    </div>
 
    <div id="frame_main" class="pageframe">
-      
+      <div id="shelf_wrapper">
+         <div id="shelf">
+
+            <div id="name" class="shelfdiv">
+               <div id="name_inner">Ian Gradert</div>
+            </div>
+
+            <div id="menu" class="shelfdiv">
+               <div class="menu_btn_container">
+                  <div id="menu_posts" class="menu_btn">Posts</div>
+               </div>
+               <div class="menu_btn_container">
+                  <div id="menu_projects" class="menu_btn">Projects</div>
+               </div>
+               <div class="menu_btn_container">
+                  <div id="menu_resume" class="menu_btn">Resume</div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+      <div class="pad"></div>
+
+      <div id="body_wrapper">
+
+         <div id="index" class="bodydiv">
+            1.
+            <br/>
+            2.
+            <br/>
+            3.
+         </div>
+
+         <div id="postbody" class="bodydiv">
+            Lorem ipsum boogie bang
+         </div>
+
+      </div>
+
+      <div class="pad"></div>
+
    </div>
 
    <script>
@@ -91,11 +133,18 @@
       });
 
       function PassWelcome() {
+         $("#frame_main").css("display", "block");
+         $("#frame_main").css("opacity", "0.00");
+
          $("#frame_welcome").animate({
             opacity: 0.00
          }, 200, function () {
             $("#frame_welcome").css("display", "none");
          });
+
+         $("#frame_main").animate({
+            opacity: 1.00
+         }, 200);
       };
    </script>
 </body>
