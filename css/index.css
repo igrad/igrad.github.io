@@ -19,18 +19,23 @@ body {
    overflow: hidden;
 }
 
+a {
+   color: cadetblue;
+}
+
+a:visited {
+   color: darkslateblue;
+}
+
 .pageframe {
+   display: none;
+
    width: 100%;
    height: 100%;
 }
 
 #frame_welcome {
    user-select: none;
-   display: none;                         /* Remove this later */
-}
-
-#frame_main {
-   display: block;                        /* Remove this later */
 }
 
 #welcome_container {

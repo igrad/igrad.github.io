@@ -1,5 +1,9 @@
 #body_home {
    display: block;
+
+   text-align: justify;
+
+   overflow-y: auto;
 }
 
 
