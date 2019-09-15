@@ -1,3 +1,7 @@
+.body_container {
+   display: none;
+}
+
 #body_home {
    display: block;
 
@@ -9,8 +13,6 @@
 
 
 #body_posts {
-   display: grid;
-
    grid-template-columns: 25% 75%;
 }
 
