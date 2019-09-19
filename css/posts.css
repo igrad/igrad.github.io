@@ -1,0 +1,31 @@
+#post_index {
+   position: relative;
+   overflow-x: hidden;
+
+   height: 100%;
+}
+
+#fade {
+   position: absolute;
+   display: block;
+
+   right: 0px;
+   bottom: 0px;
+
+   pointer-events: none;
+
+   background-image: linear-gradient(
+      to right,
+      rgba(26, 26, 26, 0),
+      rgba(26, 26, 26, 1) 100%
+      );
+
+   z-index: 1;
+
+   width: 30%;
+   height: 100%;
+}
+
+.index_entry {
+   white-space: nowrap;
+}

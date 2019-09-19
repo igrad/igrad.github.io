@@ -1,5 +1,7 @@
 .body_container {
    display: none;
+
+   height: 100%;
 }
 
 #body_home {

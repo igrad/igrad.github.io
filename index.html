@@ -8,9 +8,13 @@
    <link rel="stylesheet" href="css/index.css">
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/body.css">
+   <link rel="stylesheet" href="css/posts.css">
 
    <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+   </script>
+   <script
+   src="js/posts.js">
    </script>
 </head>
 
@@ -70,18 +74,14 @@
             <br/>
             <p>This page is a small hub for everything you need to know about me, but if you have any questions for me (professional or otherwise), please feel free to send me an email at <a href="mailto:iangradert@gmail.com">iangradert@gmail.com</a>.</p>
             <br/>
-            <p>I greatly enjoy various forms of media; jazz and metal, shooter games and puzzle games, YouTube skits, 70s/80s cinema, and more. I have monthly features under the Monthlies section talking about my top picks for games and music. These posts detail why I'm enjoying that particular work and why you should too. I'm also still rapidly growing as a programmer and software developer - learning new tricks, refining my style, and adopting new practices. Posts about programming will show up more in the posts section, but if they're project-related, they'll also be in the Projects section.</p>
+            <p>I greatly enjoy various forms of media; jazz and metal, shooter games and puzzle games, YouTube skits, 70s/80s cinema, and more. I have monthly features talking about my top picks for games and music. These posts detail why I'm enjoying that particular work and why you should too. I'm also still rapidly growing as a programmer and software developer - learning new tricks, refining my style, and adopting new practices. Posts about programming will also show up in the Projects section if they're project-related.</p>
             <br/>
             <p>I currently have one project in active development, and several others on the sketchboard, along with a plethora of other ideas that will likely never come to fruition. My current project is inspired by the likes of the old DOS games NetHack and Rogue, and draws heavily on fantasy elements from Dungeons & Dragons. Currently, it's titled Catacombs of Halfwind Keep. If you'd like to learn more about it, click <a href="https://github.com/igrad/CHK">here</a>.</p>
          </div>
 
          <div id="body_posts" class="body_container">
-            <div id="posts_index" class="bodydiv">
-               1.
-               <br/>
-               2.
-               <br/>
-               3.
+            <div id="posts_index_wrapper" class="bodydiv">
+
             </div>
 
             <div id="posts_body" class="bodydiv">
@@ -116,114 +116,116 @@
    <script>
       $(document).ready(function() {
          // Pivot element
-         var pivot = false;
+         var pivot = false
 
          $(".joke_btn").mouseenter(function() {
             if ($(this).attr("set") == "false") {
                // Little lambda to avoid syntax hell
                var getProp = (itemID, prop) => {
-                  return parseInt($(itemID).css(prop));
-               };
+                  return parseInt($(itemID).css(prop))
+               }
 
-               console.log("Doing stuff");
+               console.log("Doing stuff")
    				// Helper vars
-               var next = $("#" + $(this).attr("next"));
-               var nextid = "#" + next.attr("id");
-               var me = $(this);
-               var id = "#" + me.attr("id");
+               var next = $("#" + $(this).attr("next"))
+               var nextid = "#" + next.attr("id")
+               var me = $(this)
+               var id = "#" + me.attr("id")
                var myWidth = getProp(id, "width") +
                   2 * getProp(id, "padding-left") +
-                  2 * getProp(id, "border-left-width");
-               next.css("display", "block");
+                  2 * getProp(id, "border-left-width")
+               next.css("display", "block")
 
    				// Left edge X coord of the next node (prediction)
-   				var nextLeft = me.position().left + myWidth;
+   				var nextLeft = me.position().left + myWidth
 
    				// Right edge X coord of next node (prediction)
-   				var nextRight = nextLeft + getProp(nextid, "width");
+   				var nextRight = nextLeft + getProp(nextid, "width")
 
    				// Set horizontal edge
                if (!pivot) {
-                  next.css("left", me.position().left + myWidth);
+                  next.css("left", me.position().left + myWidth)
                } else {
-                  next.css("left", me.position().left);
+                  next.css("left", me.position().left)
                }
 
                // Set vertical edge
                if (pivot) {
-                  console.log("pivot1");
-   					next.css("top", getProp(id, "top") + myWidth);
+                  console.log("pivot1")
+   					next.css("top", getProp(id, "top") + myWidth)
                } else {
-                  console.log("else...");
-   					next.css("top", getProp(id, "top"));
+                  console.log("else...")
+   					next.css("top", getProp(id, "top"))
    				}
 
                if (nextRight > getProp("body", "width") * 0.85) {
                   // If the predicted right edge is OOB on X,
                   // rotate by 90 degrees
-                  console.log("OOB");
-                  if (!pivot) pivot = true;
-                  next.addClass("joke90");
+                  console.log("OOB")
+                  if (!pivot) pivot = true
+                  next.addClass("joke90")
                }
 
-               $(this).attr("set", "true");
+               $(this).attr("set", "true")
             }
-         });
+         })
 
          $(".shelfglow").hover(function() {
             $(this).css("box-shadow", "0px 1px white");
          }, function () {
             if ($(this).attr("active") == "false") {
-               $(this).css("box-shadow", "0px 1px gray");
+               $(this).css("box-shadow", "0px 1px gray")
             }
-         });
-      });
+         })
+      })
 
       function PassWelcome() {
-         $("#frame_main").css("display", "grid");
-         $("#frame_main").css("opacity", "0.00");
+         $("#frame_main").css("display", "grid")
+         $("#frame_main").css("opacity", "0.00")
 
          $("#frame_welcome").animate({
             opacity: 0.00
          }, 200, function () {
-            $("#frame_welcome").css("display", "none");
-         });
+            $("#frame_welcome").css("display", "none")
+         })
 
          $("#frame_main").animate({
             opacity: 1.00
-         }, 200);
+         }, 200)
       };
 
       function GoToHome() {
-         $(".body_container").css("display", "none");
-         $("#body_home").css("display", "block");
+         $(".body_container").css("display", "none")
+         $("#body_home").css("display", "block")
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray");
-         $("#name").attr("active", "true").css("box-shadow", "0px 1px white");
+         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
+         $("#name").attr("active", "true").css("box-shadow", "0px 1px white")
       }
 
       function GoToPosts() {
-         $(".body_container").css("display", "none");
-         $("#body_posts").css("display", "grid");
+         ShowIndex()
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray");
-         $("#menu_posts").attr("active", "true").css("box-shadow", "0px 1px white");
+         $(".body_container").css("display", "none")
+         $("#body_posts").css("display", "grid")
+
+         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
+         $("#menu_posts").attr("active", "true").css("box-shadow", "0px 1px white")
       }
 
       function GoToProjects() {
-         $(".body_container").css("display", "none");
-         $("#body_projects").css("display", "block");
+         $(".body_container").css("display", "none")
+         $("#body_projects").css("display", "block")
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray");
-         $("#menu_projects").attr("active", "true").css("box-shadow", "0px 1px white");
+         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
+         $("#menu_projects").attr("active", "true").css("box-shadow", "0px 1px white")
       }
 
       function GoToResume() {
-         $(".body_container").css("display", "none");
-         $("#body_resume").css("display", "block");
+         $(".body_container").css("display", "none")
+         $("#body_resume").css("display", "block")
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray");
-         $("#menu_resume").attr("active", "true").css("box-shadow", "0px 1px white");
+         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
+         $("#menu_resume").attr("active", "true").css("box-shadow", "0px 1px white")
       }
    </script>
 </body>
