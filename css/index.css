@@ -34,10 +34,6 @@ a:visited {
    height: 100%;
 }
 
-#frame_welcome {
-   user-select: none;
-}
-
 #welcome_container {
    position: relative;
 

@@ -17,15 +17,3 @@
 #body_posts {
    grid-template-columns: 25% 75%;
 }
-
-#posts_index {
-   position: relative;
-
-   grid-columns: 1;
-}
-
-#posts_body {
-   position: relative;
-
-   grid-columns: 2;
-}

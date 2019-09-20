@@ -7,7 +7,7 @@
    grid-template-rows: 3;
 
    grid-template-rows: min-content auto min-content;
-   grid-template-columns: 15% 70% 15%;
+   grid-template-columns: minmax(5%, 15%) minmax(800px, 70%) minmax(5%, 15%);
 }
 
 
