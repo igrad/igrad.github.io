@@ -1,37 +1,33 @@
 // Catalog of posts
-// Format: {id: (post ID #), title: (post title), date: (date), month: (month), year: (year), tags: ["tag1", "tag2"], header: (some sample text about the post)}
+// Format: {id: (post ID #), title: (post title), date: (date), month: (month), year: (year), tags: ["tag1", "tag2", ...]}
 var catalog = [
    {  id: 0,
       title: "Demo Post With a Very Long Title",
       date: "09/18/2018",
       month: 9,
       year: 2018,
-      tags: ["misc"],
-      header: "Test post to format website"
+      tags: ["misc"]
    },
    {  id: 1,
       title: "Second Post",
       date: "09/17/2019",
       month: 9,
       year: 2019,
-      tags: ["misc"],
-      header: "Test post to format website"
+      tags: ["misc"]
    },
    {  id: 2,
       title: "Recent Post",
       date: "09/18/2019",
       month: 9,
       year: 2019,
-      tags: ["misc"],
-      header: "Test post to format website"
+      tags: ["misc"]
    },
    {  id: 3,
       title: "Last Post",
       date: "09/18/2019",
       month: 9,
       year: 2019,
-      tags: ["misc"],
-      header: "Test post to format website"
+      tags: ["misc"]
    }
 ]
 
@@ -40,11 +36,6 @@ function GetListOfPosts(filter) {
    // Return a list of references to the posts we want, as determined by filter
    if (filter == null) return catalog
    else return catalog.filter(item => item.tags.includes(filter))
-}
-
-function GetPostPreviews(filter) {
-   // Get HTML code for what to display in a series of post previews
-
 }
 
 function ShowIndex(filter) {
@@ -93,12 +84,6 @@ function ShowPost(postID) {
 function ShowMostRecentPost() {
    // Displays the most recently-created post
    ShowPost(catalog.length - 1)
-}
-
-function ShowPosts(filter) {
-   // Accepts an enumeration as the filter to determine what type of
-   // posts should be grabbed and loaded
-
 }
 
 function UpdateFilters () {

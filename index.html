@@ -9,13 +9,13 @@
    <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="css/body.css">
    <link rel="stylesheet" href="css/posts.css">
+   <link rel="stylesheet" href="css/projects.css">
 
    <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
    </script>
-   <script
-   src="js/posts.js">
-   </script>
+   <script src="js/posts.js"></script>
+   <script src="js/projects.js"></script>
 </head>
 
 <body>
@@ -109,6 +109,24 @@
 
 
          <div id="body_projects" class="body_container">
+            <div id="project_posts">
+               <div id="project_index" class="bodydiv">
+                  <div id="project_CHK" class="project_btn">
+                     Catacombs of Halfwind Keep
+                  </div>
+                  <div id="project_Rodney" class="project_btn">
+                     Rodney
+                  </div>
+                  <div id="project_GMWN" class="project_btn">
+                     GM World Notes
+                  </div>
+                  <div id="project_BoH" class="project_btn">
+                     Bag of Holding
+                  </div>
+               </div>
+
+               <iframe id="project_body" class="bodydiv"></iframe>
+            </div>
          </div>
 
          <div id="body_resume" class="body_container">
@@ -136,7 +154,7 @@
       $(document).ready(function() {
          // Reset filters and items storable betweeen sessions
          $(".filter_cb").prop("checked", false)
-         
+
          // Pivot element
          var pivot = false
 

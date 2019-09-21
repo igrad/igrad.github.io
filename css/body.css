@@ -17,3 +17,9 @@
 #body_posts {
    grid-template-columns: 25% 75%;
 }
+
+
+
+#body_projects {
+   grid-template-columns: 25% 75%;
+}

@@ -1,0 +1,26 @@
+#project_posts {
+   display: grid;
+
+   grid-template-columns: min-content auto;
+
+   grid-gap: 0.5em;
+}
+
+#project_index {
+   display: grid;
+}
+
+.project_btn {
+   width: 100%;
+   height: 2em;
+
+   white-space: nowrap;
+
+   line-height: 1.1em;
+   padding-top: 0.5em;
+   padding-bottom: 0.5em;
+}
+
+#project_body {
+   border: 0px;
+}
