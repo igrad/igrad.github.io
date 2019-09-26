@@ -10,6 +10,8 @@
    <link rel="stylesheet" href="css/body.css">
    <link rel="stylesheet" href="css/posts.css">
    <link rel="stylesheet" href="css/projects.css">
+   <link rel="stylesheet" href="css/resume.css">
+
 
    <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
@@ -38,23 +40,23 @@
       <div id="shelf_wrapper">
          <div id="shelf">
 
-            <div id="name" class="shelfglow" active="true" onmouseup="GoToHome();">
+            <div id="name" class="shelfglow" active="true" onmousedown="GoToHome();">
                <div id="name_inner">Ian Gradert</div>
             </div>
 
             <div id="menu">
                <div id="menu_posts" class="menu_btn_container shelfglow" active="false">
-                  <div class="menu_btn" onmouseup="GoToPosts();">
+                  <div class="menu_btn" onmousedown="GoToPosts();">
                      Posts
                   </div>
                </div>
                <div id="menu_projects" class="menu_btn_container shelfglow" active="false">
-                  <div class="menu_btn" onmouseup="GoToProjects();">
+                  <div class="menu_btn" onmousedown="GoToProjects();">
                      Projects
                   </div>
                </div>
                <div id="menu_resume" class="menu_btn_container shelfglow" active="false">
-                  <div class="menu_btn" onmouseup="GoToResume();">
+                  <div class="menu_btn" onmousedown="GoToResume();">
                      Resume
                   </div>
                </div>
@@ -74,7 +76,7 @@
             <br/>
             <p>I greatly enjoy various forms of media; jazz and metal, shooter games and puzzle games, YouTube skits, 70s/80s cinema, and more. I have monthly features talking about my top picks for games and music. These posts detail why I'm enjoying that particular work and why you should too. I'm also still rapidly growing as a programmer and software developer - learning new tricks, refining my style, and adopting new practices. Posts about programming will also show up in the Projects section if they're project-related.</p>
             <br/>
-            <p>I currently have one project in active development, and several others on the sketchboard, along with a plethora of other ideas that will likely never come to fruition. My current project is inspired by the likes of the old DOS games NetHack and Rogue, and draws heavily on fantasy elements from Dungeons & Dragons. Currently, it's titled Catacombs of Halfwind Keep. If you'd like to learn more about it, click <a href="https://github.com/igrad/CHK">here</a>.</p>
+            <p>I currently have one project in active development, and several others on the sketchboard, along with a plethora of other ideas that will likely never come to fruition. My current project is inspired by the likes of the old DOS games NetHack and Rogue, and draws heavily on fantasy elements from Dungeons & Dragons. Currently, it's titled Catacombs of Halfwind Keep. You can find more information about it in the projects section.</p>
          </div>
 
          <div id="body_posts" class="body_container">
@@ -107,29 +109,65 @@
             <iframe id="posts_body" class="bodydiv"></iframe>
          </div>
 
-
          <div id="body_projects" class="body_container">
             <div id="project_posts">
                <div id="project_index" class="bodydiv">
-                  <div id="project_CHK" class="project_btn">
+                  <div id="project_index_header" class="project_entry">
+                     Current Projects
+                  </div>
+                  <div id="project_CHK" class="project_entry project_btn">
                      Catacombs of Halfwind Keep
                   </div>
-                  <div id="project_Rodney" class="project_btn">
+                  <div id="project_Rodney" class="project_entry project_btn">
                      Rodney
                   </div>
-                  <div id="project_GMWN" class="project_btn">
+                  <div id="project_GMWN" class="project_entry project_btn">
                      GM World Notes
                   </div>
-                  <div id="project_BoH" class="project_btn">
+                  <div id="project_BoH" class="project_entry project_btn">
                      Bag of Holding
                   </div>
                </div>
 
-               <iframe id="project_body" class="bodydiv"></iframe>
+               <!-- Spacer between index and body -->
+               <div></div> 
+
+               <div id="project_details" class="bodydiv">
+                  <div id="project_CHK" class="project_article">
+                     <p class="project_header">
+                        Catacombs of Halfwind Keep
+                     </p>
+                     <p class="project_pitch">
+                        A multiplayer rogue-like inspired by NetHack and Dungeons & Dragons.
+                     </p>
+                     <div class="project_body">
+                        <p>
+                           If you've never played <a href="https://www.nethack.org/">NetHack</a>, you're missing out on an experience that is essential to understanding how much video games (and computers) have evolved since their introduction to the mass market. NetHack is what the cutting edge of the video game world used to look like, as Rogue and NetHack were among the first games with graphics. It's fantastically fun, and equally frustrating. There is A LOT to learn about the game, with odd keybindings, no tutorial, and merciless AI. It's a pretty faithful recreation of early Dungeons & Dragons: you're slapped into a dungeon with little context, you can interact with most everything you find in some way (often in ways more creative than you may initially think), and you aren't expected to survive.
+                        </p>
+                        <p>
+                           Fast forward almost 35 years (NetHack was released in 1985!) and now almost every game has a multiplayer aspect - and for good reason. Multiplayer is a whole new layer of interaction with a game, and it manifests in many different ways. One of my favorite multiplayer systems is what you see in Minecraft. Players can fight against each other, work cooperatively, or function independently and sparsely interact. That freedom of choice is a game mechanic in itself, and one that I want CHK to revolve around. As Adam Millard eloquently put it in his <a href="https://www.youtube.com/watch?v=39DqD38J-l0">YouTube video</a> about the changes we've seen in multiplayer games over the years:
+                        </p>
+                        <p>
+                           <span>
+                              <div style="font-style: italic; font-size: 1.3em; text-align: center;">
+                                 "Playing a game with other people doesn't make it more fun -<br/>
+                                 what does, is <span style="font-style: normal;">interacting</span> with them."
+                              </div>
+                           </span>
+                        </p>
+                        <p>
+                           Catacombs of Halfwind Keep aims to bring the grind, nuance, and vastness of NetHack into the 21st century by taking the same premise as NetHack and expanding it. Where NetHack is very chunky, CHK is more discrete, which allows players to have more refined control over their inevitable death.
+                        </p>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
 
          <div id="body_resume" class="body_container">
+            <div id="pdf_wrapper">
+               <embed src="Gradert_Ian_Resume.pdf" height="100%" width="100%"> </embed>
+            </div>
          </div>
 
       </div>
@@ -139,7 +177,7 @@
 
       <div id="footer">
          <div style="float: left; grid-column: 1;">
-            &#x24B8; by no one, actually. <br/>Not that there's anything cool here anyways.
+            &#x24B8; no one, actually. <br/>Not that there's anything cool here anyways.
          </div>
          <div style="float: right; text-align: right; grid-column: 2;">
             Email: <a href="mailto:iangradert@gmail.com">
@@ -245,6 +283,13 @@
             }
 
             UpdateFilters()
+         })
+
+         $(".project_btn").hover(function() {
+            $(".project_btn").css("color", "#dddddd").css("background-color", "")
+            $(this).css("color", "white").css("background-color", "#2b2b2b")
+         }, function() {
+            $(".project_btn").css("color", "#dddddd").css("background-color", "")
          })
       })
 

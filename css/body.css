@@ -18,8 +18,12 @@
    grid-template-columns: 25% 75%;
 }
 
-
-
 #body_projects {
    grid-template-columns: 25% 75%;
+}
+
+#body_resume {
+   height: 100%;
+   
+   overflow-y: none;
 }
