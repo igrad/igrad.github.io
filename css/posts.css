@@ -78,3 +78,36 @@
 
    grid-column: 2;
 }
+
+
+
+
+/* Content used within individual posts */
+.post_head {
+   float: left;
+
+   font-size: 2em;
+   font-weight: bold;
+
+   width: 100%;
+
+   margin-bottom: 0em;
+}
+
+.post_date {
+   float: left;
+
+   font-style: italic;
+
+   width: 100%;
+
+   margin-bottom: 1em;
+
+   font-size: 1em;
+}
+
+.post_body {
+   text-align: justify;
+
+   font-size: 1em;
+}

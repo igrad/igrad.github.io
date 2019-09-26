@@ -23,7 +23,7 @@
 <body>
    <div id="frame_welcome" class="pageframe">
       <div id="welcome_container">
-         <a id="welcome_msg">Hi, I'm Ian.</a>
+         <div id="welcome_msg">Hi, I'm Ian.</div>
       </div>
       <div id="joke1" next="joke2" set="false" class="joke_btn">&#62;</div>
       <div id="joke2" next="joke3" set="false" class="joke_btn">and</div>
@@ -115,22 +115,25 @@
                   <div id="project_index_header" class="project_entry">
                      Current Projects
                   </div>
-                  <div id="project_CHK" class="project_entry project_btn">
+                  <div id="project_CHK_btn" body="CHK" class="project_entry project_btn">
                      Catacombs of Halfwind Keep
                   </div>
-                  <div id="project_Rodney" class="project_entry project_btn">
+                  <div id="project_Rodney_btn" body="Rodney" class="project_entry project_btn">
                      Rodney
                   </div>
-                  <div id="project_GMWN" class="project_entry project_btn">
+                  <div id="project_Guy_btn" body="Guy" class="project_entry project_btn">
+                     Guy
+                  </div>
+                  <div id="project_GMWN_btn" body="GMWN" class="project_entry project_btn">
                      GM World Notes
                   </div>
-                  <div id="project_BoH" class="project_entry project_btn">
+                  <div id="project_BoH_btn" body="BoH" class="project_entry project_btn">
                      Bag of Holding
                   </div>
                </div>
 
                <!-- Spacer between index and body -->
-               <div></div> 
+               <div></div>
 
                <div id="project_details" class="bodydiv">
                   <div id="project_CHK" class="project_article">
@@ -157,6 +160,83 @@
                         </p>
                         <p>
                            Catacombs of Halfwind Keep aims to bring the grind, nuance, and vastness of NetHack into the 21st century by taking the same premise as NetHack and expanding it. Where NetHack is very chunky, CHK is more discrete, which allows players to have more refined control over their inevitable death.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div id="project_Rodney" class="project_article">
+                     <p class="project_header">
+                        Rodney
+                     </p>
+                     <p class="project_pitch">
+                        The adventure of a boy who survived the zombie
+                        apocalype, and must find his way home.
+                     </p>
+                     <div class="project_body">
+                        <p>
+                           I've had this idea for a video game for at least four or five years. It follows the story of a young boy who by no small miracle survived a sudden zombie apocalype that took the world by storm in a matter of hours. Scared and alone, he must make his way through a relentless city occupied by zombies, scavengers, and what little law enforcement remains.
+                        </p>
+                        <p>
+                           This is a very ambitious project, and it's a story that I want to tell right. It's something I can see myself working on for years, and it shouldn't be my first indie game. Thus, this project is on hold while Catacombs of Halfwind Keep is still under development. There is only concept writing for this game in place so far, not much to show.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div id="project_Guy" class="project_article">
+                     <p class="project_header">
+                        Guy (working title)
+                     </p>
+                     <p class="project_pitch">
+                        An artistic game experiment with color and emotion.
+                     </p>
+                     <div class="project_body">
+                        <p>
+                           Like Rodney, this is another game I should very much like to develop, but it's a story that I want to tell correctly. As such, this is planned to be my next project after Catacombs of Halfwind Keep and Rodney.
+                        </p>
+                        <p>
+                           The idea of playing with color as a game mechanic has been stuck in my head for a long time, but the story and mechanics to accompany it have eluded me until recently. Guy is a story of a man who had abandoned all emotion in life in place of just trying to get by with a 9 to 5 - the kind of person who has been worked and abused for so long that they no longer see good in the world. This story begins as he finds love, and starts to see the bright side of things again. The story board on this short, experimental game is still very much in development, so there isn't much to show for this yet.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div id="project_GMWN" class="project_article">
+                     <p class="project_header">
+                        GM World Notes
+                     </p>
+                     <p class="project_pitch">
+                        A desktop app and organizational tool for RPG Game
+                        Masters to keep their world in order.
+                     </p>
+                     <div class="project_body">
+                        <p>
+                           <span style="font-style: italic">Note: this project has been put on hold while focusing on projects that I'm more passionate about. It also served as a great refresher on HTML and JavaScript.</span>
+                        </p>
+                        <p>
+                           Any Dungeons & Dragons dungeon master (DM/GM) worth their salt can attest to the difficulties in keeping track of the world brewed in only their mind. Recalling names of places, interactions with people, and how many times the players have been arrested is tricky business, and there aren't many tools out there designed to assist in this intimidating task. Queue GM World Notes, a desktop tool designed with Game Masters in mind to keep all of the notes one could ever need all in a single, neatly-organized place.
+                        </p>
+                        <p>
+                           GM World Notes allows for the user to create their own organizational system, but relies on the folder/file paradigm that everyone is already familiar with. Store templates for certain page types. Tag pages for quick catagorization. Search through all page titles, contents, tags, or everything. Every pixel is designed to help you be the best GM you can be, because it's made by a GM with terrible long term memory.
+                        </p>
+                        <p>
+                           If you'd like to see the repository for GM World Notes, click <a href="https://github.com/igrad/GMWorldNotes">here</a>.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div id="project_BoH" class="project_article">
+                     <p class="project_header">
+                        Bag of Holding
+                     </p>
+                     <p class="project_pitch">
+                        Mobile app and organizational tool for RPG players to
+                        track their equipment.
+                     </p>
+                     <div class="project_body">
+                        <p>
+                           While this project initially had high ambitions of filling a niche opening in the mobile app market, my slow development schedule left this project in the dust as more professional and well-funded projects filled the opening. Many of these new alternatives are awesome - you can check them out <a href="https://play.google.com/store/search?q=Bag%20of%20Holding&c=apps&hl=en_US">here</a>.
+                        </p>
+                        <p>
+                           If you still want to see the repository for this project, which includes no short amount of work with Kivy for Python 3, check it out <a href="https://github.com/igrad/Bag-of-Holding">here</a>.
                         </p>
                      </div>
                   </div>
@@ -248,6 +328,12 @@
             }
          })
 
+         if (window.innerWidth < 500) {
+            console.log("Adjusting for mobile")
+            $(".joke_btn").mouseenter(function() {})
+            $("#joke1").click(PassWelcome())
+         }
+
          $(".shelfglow").hover(function() {
             $(this).css("box-shadow", "0px 1px white")
          }, function () {
@@ -290,6 +376,11 @@
             $(this).css("color", "white").css("background-color", "#2b2b2b")
          }, function() {
             $(".project_btn").css("color", "#dddddd").css("background-color", "")
+         })
+
+         $(".project_btn").click(function() {
+            $(".project_article").css("display", "none")
+            $("#project_" + $(this).attr("body")).css("display", "block")
          })
       })
 

@@ -14,6 +14,7 @@ body {
 
    cursor: default;
 
+   font-size: 1em;
    font-family: Palatino Linotype;
 
    overflow: hidden;
@@ -42,6 +43,8 @@ a:visited {
 
    margin: auto;
    top: calc(40% - 16px - 2em);
+
+   user-select: none;
 }
 
 #welcome_msg {
