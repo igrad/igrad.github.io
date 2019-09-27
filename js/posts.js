@@ -3,10 +3,24 @@
 var catalog = [
    {  id: 0,
       title: "\"Hello, world!\\n\"",
-      date: "09/18/2019",
+      date: "September 18, 2019",
       month: 9,
       year: 2019,
       tags: ["misc"]
+   },
+   {  id: 1,
+      title: "[Song] \"Lay-by\" by Tennyson",
+      date: "September 26, 2019",
+      month: 9,
+      year: 2019,
+      tags: ["music"]
+   },
+   {  id: 2,
+      title: "[Game] WoW Classic",
+      date: "September 26, 2019",
+      month: 9,
+      year: 2019,
+      tags: ["gaming"]
    }
 ]
 
