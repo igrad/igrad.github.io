@@ -21,6 +21,13 @@ var catalog = [
       month: 9,
       year: 2019,
       tags: ["gaming"]
+   },
+   {  id: 3,
+      title: "[Song] \"Schism\" by Tool",
+      date: "October 11, 2019",
+      month: 10,
+      year: 2019,
+      tags: ["music"]
    }
 ]
 
