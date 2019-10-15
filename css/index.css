@@ -1,8 +1,3 @@
-html {
-   width: 100%;
-   height: 100%;
-}
-
 body {
    width: calc(100% - 16px);
    height: calc(100% - 16px);

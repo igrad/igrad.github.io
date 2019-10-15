@@ -68,3 +68,11 @@
 .project_body {
    text-align: justify;
 }
+
+.project_article {
+   display: none;
+}
+
+#project_CHK {
+   display: block;
+}
