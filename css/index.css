@@ -1,3 +1,5 @@
+/* index.css
+Higher-level stylization across the whole site, even outseide of the main wrapper. This also contains some of the persistent stylings used across different subsection types. */
 body {
    width: calc(100% - 16px);
    height: calc(100% - 16px);
@@ -24,68 +26,47 @@ a:visited {
 }
 
 .pageframe {
-   display: none;
-
    width: 100%;
    height: 100%;
 }
 
-#welcome_container {
-   position: relative;
 
-   width: min-content;
-   height: min-content;
 
-   margin: auto;
-   top: calc(40% - 16px - 2em);
-
-   user-select: none;
-}
-
-#welcome_msg {
-   position: relative;
-
-   font-size: 4em;
-   text-shadow: 8px 8px #101010;
-   white-space: nowrap;
-}
-
-.joke_btn {
-   position: absolute;
-   width: min-content;
-
-   padding: 4px;
-   padding-left: 12px;
-   padding-right: 12px;
-
-   font-size: 2em;
+/* Reusable stylings across multiple subsections */
+/* Article subsection headers */
+.subsection_header {
    font-weight: bold;
-
-   background-color: #334269;
-   border: 2px #5470b8 solid;
-   border-radius: 4px;
-
-   box-shadow: 4px 4px #111111;
-
-   cursor: default;
-
-   display: none;
+   font-size: 1.5em;
 }
 
-.joke90 {
-   transform: rotate(90deg);
-   transform-origin: 0% 100%;
+/* Large quotes in posts or project details */
+.big_quote {
+   font-style: italic;
+   font-size: 1.3em;
+   text-align: center;
 }
 
-#joke1 {
-   position: absolute;
+.code_block {
+   width: calc(100% - 1em - 2px);
 
-   top: calc(56% - 16px - 2em);
-   left: calc(50% - 8px - 2px - 12px); /* page margin, border, and padding */
+   border: 1px solid gray;
+   border-radius: 3px;
 
-   display: block;
+   padding: 0.5em;
+
+   background-color: #2f2f2f;
+
+   font-family: Courier;
 }
 
-#joke8 {
-   cursor: pointer;
+code {
+   font-family: Courier;
+}
+
+bold {
+   font-weight: bold;
+}
+
+italic {
+   font-style: italic;
 }

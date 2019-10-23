@@ -28,6 +28,13 @@ var catalog = [
       month: 10,
       year: 2019,
       tags: ["music"]
+   },
+   {  id: 4,
+      title: "Programmers and Serial Killers",
+      date: "October 23, 2019",
+      month: 10,
+      year: 2019,
+      tags: ["programming"]
    }
 ]
 

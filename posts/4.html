@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+   <link rel="stylesheet" href="../css/index.css">
+   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="../css/body.css">
+   <link rel="stylesheet" href="../css/posts.css">
+
+   <script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+   </script>
+   <script src="../js/posts.js"></script>
+<head>
+
+</head>
+
+<body style="overflow-y: auto;">
+   <p class="post_head">
+      Programmers and Serial Killers
+   </p>
+   <p class="post_date">
+      Posted October 11, 2019
+   </p>
+   <div class="post_body">
+      <p>
+         Have you ever watched one of the many crime shows on TV and heard the good guys talking about a killer's "signature"? The phrase is a bit ubiquitous at this point, but early in the now 14-season run of "Criminal Minds", this phrase was explained ad nauseam. John Douglas has defined it in his book <italic>Mindhunter: Inside the FBI's Elite Serial Crime Unit</italic>:
+         "A signature is a ritual—something [that] is done that is not necessary to perpetrate that particular crime... The signature is the ritual that is unique to the offender, and that's what you're looking for."
+      </p>
+      <p>
+         So how does this apply to programmers? Well, each programmer also has their own subtle signature that's written into their code. The first thing that should come to your mind is stylization, such as using nocasenames, camelCaseNames, or snake_style_names. But it's much more than that. A programmer's signature is obvious in some ways and subtle in others. As far as I can tell, it breaks down into the following:
+         <ul>
+            <li>Stylization</li>
+            <li>Documentation</li>
+            <li>Process of Thought</li>
+            <li>Consistency</li>
+         </ul>
+         Once you create a fingerprint of these different components do you begin to see a programmer's signature. So, let's break each of them down.
+      </p>
+      <br/>
+      <p>
+         <span class="subsection_header">Stylization</span><br/>
+         One's code style encompasses quite a few small points of preference. Variable naming convention, bracket placement, etc.
+      </p>
+      <pre class="code_block">
+// Here's an example of how I like to write C/C++ code
+int main(int argc, char* argv[]) {
+   // Extract and parse the argument passed from command line
+   char* end;
+   int argInt = strtol(args[1], &end, 10);
+
+   // Validate that the passed argument is valid
+   if (*end != '\0') {
+      printf("ERROR: Unable to parse input to a decimal integer.\n");<br/>
+      return -1;
+   }
+
+   // Count to n
+   printf("Counting...\n");
+   for (int iter = 0; iter < argInt; iter++) {
+      printf("Counting: %i\n", iter);
+   }
+   printf("Done counting\n");
+
+   return 1;
+}
+      </pre>
+      <p>
+         <bold>Comments</bold>: I prefer to put a space between the comment qualifier and the actual contents of the comment. Most people do this to improve readability.
+         <br/><br/>
+         <bold>Grouping</bold>: Most people will group syntactically-relevant lines together, and put more space between chunks of code that are not as closely related. For example, I put the declaration for <code>end</code> and <code>argInt</code> next to each other since they're employed in the same function. Similarly, all the print statements are grouped together.
+         <br/><br/>
+         <bold>Brackets</bold>: I like to use Java-style brackets, even in C code, because it saves space in 99% of situations, and because I think it looks a little bit cleaner.
+      </p>
+      <br/>
+      <p>
+         <span class="subsection_header">Documentation</span><br/>
+         Anyone who has ever collaborated with other programmers will tell you the importance of documenting your code clearly and accurately. However, this can be one of the programmer's most difficult jobs.
+         <br/><br/>
+         If you write out a function to, say, hash a number after salting it with an 8-bit number like 12345678. After writing the code, you go back and document it and re-read it a few times to make sure it's understandable.
+         <br/><br/>
+         Well, if some malicious actor comes along and finds out what salt number we use and what encryption scheme we use, we may want to update that code in the next release. So we go back and change our salt number to something far more secure: 11111111. Now we also have to go into our documentation and update anything in there that may reference what our salt value is. We've effectively doubled the amount of work needed to update this code.
+         <br/><br/>
+         The quality of one's documentation is often a direct reflection of how much time they have spent on that bit of code. This isn't necessarily true for code that is still under heavy development, but becomes more true towards the end of the initial development cycle. As a general rule of thumb: good programmers have good documentation.
+      </p>
+      <br/>
+      <p>
+         <span class="subsection_header">Process of Thought</span><br/>
+         This topic is a little nebulous compared to the others. When a difficult problem is presented to me, the first thing I do is grab my whiteboard and start jotting down subtasks and ideas. After everything is listed out and a vision of the solution is formed, that's when things need to be solidified: this is where the process of thought comes in.
+         <br/><br/>
+         There's infinitely many ways to solve any one program when it comes to programming. The way it is approached and solved is telling of how deeply the programmer(s) thought out the issue and planned ahead of time.
+         <br/><br/>
+         Let's take an example: we need to implement a function that returns the dot-product of two matrices. Matrices can be 1x1 up to 100x100. A naive approach would be to use a nested for-loop and iterate through the whole size of the matrices. A more nuanced approach might use multiple threads to divvy up the work if the matrix is of a suitable size, or it might instead allow for an alternative function argument that allows the programmer to tell the function if one of the matrices is an identity matrix (which makes an O(n^2) job an O(n) job) or if all values in a matrix are the same value (which is still O(n^2) but alleviates the need to index into one of the matrices, instead reading from a much more familiar variable).
+         <br/><br/>
+         This sort of improvement would tell us just how much the programmer has critically thought about the problem and how much they care about optimizing their code. It's also very much tied to experience, but other style factors are also indicative of one's experience level.
+      </p>
+      <br/>
+      <p>
+         <span class="subsection_header">Consistency</span><br/>
+         Another telling sign of an experienced programmer is their consistency. Showing consistent syntax style, consistent documentation, consistent attention to quality, and most importantly: consistent effort and dedication. I'm quite guilty of starting a project only to abandon it for something else, be it caused by interruptions in my personal or professional life, or simply because I'm not able to produce the product up to the standards I want it to be. This is something that comes with time as a programmer matures, and one of the biggest portions of my own style that I'm still working on.
+      </p>
+      <br/>
+      <p>
+         <span class="subsection_header">Conclusions</span><br/>
+         A programmer's fingerprint can change and evolve over time, but once the programmer has matured and found a solid career or narrowed down what sort of programming they want to do, the fingerprint comes into clearer focus. So what does your fingerprint look like? How would you like to improve your signature?
+      </p>
+   </div>
+</body>
+
+</html>

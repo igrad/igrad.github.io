@@ -1,3 +1,7 @@
+/* projects.css
+Stylization specific to project posts since they're more uniquely designed than posts are. */
+
+/* Index and sorting column */
 #project_posts {
    display: grid;
 
@@ -46,6 +50,9 @@
    margin-bottom: 0.5em;
 }
 
+
+
+/* Project data itself */
 .project_header {
    float: left;
 
@@ -73,6 +80,7 @@
    display: none;
 }
 
+/* Make sure CHK is listed as the first project visible on the page */
 #project_CHK {
    display: block;
 }

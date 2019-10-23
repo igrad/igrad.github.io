@@ -1,3 +1,7 @@
+/* Main.css
+Essentially the "template" for the page, though we're all on one page in this particular site. This controls the contents within <body> that are persistent across all subsections. */
+
+/* Largest wrapper */
 #frame_main {
    display: grid;
 
@@ -12,6 +16,7 @@
 
 
 
+/* Upper shelf */
 #shelf_wrapper {
    position: relative;
 
@@ -62,10 +67,6 @@
    white-space: nowrap;
 }
 
-.menu_btn_container {
-
-}
-
 .menu_btn {
    position: relative;
    display: block;
@@ -80,6 +81,7 @@
 
 
 
+/* Body contents */
 #body_wrapper {
    position: relative;
 
@@ -93,6 +95,7 @@
 
 
 
+/* Left and right padding */
 .pad {
    grid-row: 2;
 }
@@ -107,6 +110,7 @@
 
 
 
+/* Footer */
 #footer {
    position: relative;
    display: grid;
