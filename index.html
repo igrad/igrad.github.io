@@ -252,70 +252,54 @@
    </div>
 
    <script>
+		// Big thanks to html-online for the code to fetch URL parameters
+		// https://html-online.com/articles/get-url-parameters-javascript/
+		function getUrlVars() {
+			var vars = {}
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value
+			})
+			return vars
+		}
+
+		function getUrlParam(parameter, defaultvalue){
+			var urlparameter = defaultvalue
+			if(window.location.href.indexOf(parameter) > -1){
+				urlparameter = getUrlVars()[parameter]
+			}
+
+			return urlparameter
+		}
+
+		document.addEventListener('DOMContentLoaded', (e) => {
+			console.log("DOMContentLoaded");
+			var section = getUrlParam("section", "home")
+			var q = getUrlParam("q", "latest")
+
+			switch (section) {
+				case "home":
+					GoToHome()
+					break
+				case "posts":
+					GoToPosts(q)
+					break
+				case "projects":
+					GoToProjects(q)
+					break
+				case "resume":
+					GoToResume()
+			}
+		})
+
+
+
       $(document).ready(function() {
+			console.log("Document ready")
          // Reset filters and items storable betweeen sessions
          $(".filter_cb").prop("checked", false)
 
          // Pivot element
          var pivot = false
-
-         $(".joke_btn").mouseenter(function() {
-            if ($(this).attr("set") == "false") {
-               // Little lambda to avoid syntax hell
-               var getProp = (itemID, prop) => {
-                  return parseInt($(itemID).css(prop))
-               }
-
-               console.log("Doing stuff")
-   				// Helper vars
-               var next = $("#" + $(this).attr("next"))
-               var nextid = "#" + next.attr("id")
-               var me = $(this)
-               var id = "#" + me.attr("id")
-               var myWidth = getProp(id, "width") +
-                  2 * getProp(id, "padding-left") +
-                  2 * getProp(id, "border-left-width")
-               next.css("display", "block")
-
-   				// Left edge X coord of the next node (prediction)
-   				var nextLeft = me.position().left + myWidth
-
-   				// Right edge X coord of next node (prediction)
-   				var nextRight = nextLeft + getProp(nextid, "width")
-
-   				// Set horizontal edge
-               if (!pivot) {
-                  next.css("left", me.position().left + myWidth)
-               } else {
-                  next.css("left", me.position().left)
-               }
-
-               // Set vertical edge
-               if (pivot) {
-                  console.log("pivot1")
-   					next.css("top", getProp(id, "top") + myWidth)
-               } else {
-                  console.log("else...")
-   					next.css("top", getProp(id, "top"))
-   				}
-
-               if (nextRight > getProp("body", "width") * 0.85) {
-                  // If the predicted right edge is OOB on X,
-                  // rotate by 90 degrees
-                  console.log("OOB")
-                  if (!pivot) pivot = true
-                  next.addClass("joke90")
-               }
-
-               $(this).attr("set", "true")
-            }
-         })
-
-         if (window.innerWidth < 500) {
-            console.log("Adjusting for mobile")
-            $(".joke_btn").mouseenter(function() {})
-            $("#joke1").click(PassWelcome())
-         }
 
          $(".shelfglow").hover(function() {
             $(this).css("box-shadow", "0px 1px white")
@@ -362,25 +346,9 @@
          })
 
          $(".project_btn").click(function() {
-            $(".project_article").css("display", "none")
-            $("#project_" + $(this).attr("body")).css("display", "block")
+            ShowProject($(this).attr("body"))
          })
       })
-
-      function PassWelcome() {
-         $("#frame_main").css("display", "grid")
-         $("#frame_main").css("opacity", "0.00")
-
-         $("#frame_welcome").animate({
-            opacity: 0.00
-         }, 200, function () {
-            $("#frame_welcome").css("display", "none")
-         })
-
-         $("#frame_main").animate({
-            opacity: 1.00
-         }, 200)
-      };
 
       function GoToHome() {
          $(".body_container").css("display", "none")
@@ -390,10 +358,12 @@
          $("#name").attr("active", "true").css("box-shadow", "0px 1px white")
       }
 
-      function GoToPosts() {
+      function GoToPosts(postID) {
          if ($("#posts_body").attr("src") == null) {
             ShowIndex()
-            ShowMostRecentPost()
+
+            if (postID == "latest") ShowMostRecentPost()
+				else ShowPost(postID)
          }
 
          $(".body_container").css("display", "none")
@@ -403,12 +373,14 @@
          $("#menu_posts").attr("active", "true").css("box-shadow", "0px 1px white")
       }
 
-      function GoToProjects() {
+      function GoToProjects(projectID) {
          $(".body_container").css("display", "none")
          $("#body_projects").css("display", "block")
 
          $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
          $("#menu_projects").attr("active", "true").css("box-shadow", "0px 1px white")
+
+			ShowProject(projectID)
       }
 
       function GoToResume() {

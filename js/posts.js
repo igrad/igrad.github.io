@@ -84,8 +84,12 @@ function ShowIndex(filter) {
 }
 
 function ShowPost(postID) {
-   // Load HTML of post to the screen in iframe
-   $("#posts_body").attr("src", "posts\\" + postID + ".html")
+	// Validate arg
+	postID = parseInt(postID)
+	if (postID < 0 || postID >= catalog.length) postID = catalog.length - 1
+
+	// Load HTML of post to the screen in iframe
+	$("#posts_body").attr("src", "posts\\" + postID + ".html")
 }
 
 function ShowMostRecentPost() {
