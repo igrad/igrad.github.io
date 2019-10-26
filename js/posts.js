@@ -85,7 +85,9 @@ function ShowIndex(filter) {
 
 function ShowPost(postID) {
 	// Validate arg
-	postID = parseInt(postID)
+	if (postID == null || postID == "") postID = -1
+	else postID = parseInt(postID)
+
 	if (postID < 0 || postID >= catalog.length) postID = catalog.length - 1
 
 	// Load HTML of post to the screen in iframe
