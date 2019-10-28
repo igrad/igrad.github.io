@@ -5,7 +5,6 @@ function ShowProject(projectID) {
 	$(".project_article").css("display", "none")
 
 	// Validate arg
-	console.log("projectID = " + projectID)
 	if (projectAbbrevs.indexOf(projectID) == -1) projectID = "CHK"
 
 	// Open project article

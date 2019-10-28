@@ -25,23 +25,23 @@
       <div id="shelf_wrapper">
          <div id="shelf">
 
-            <div id="name" class="shelfglow" active="true" onmousedown="GoToHome();">
+            <div id="name" class="shelfglow" onmousedown="GoToHome()">
                <div id="name_inner">Ian Gradert</div>
             </div>
 
             <div id="menu">
-               <div id="menu_posts" class="menu_btn_container shelfglow" active="false">
-                  <div class="menu_btn" onmousedown="GoToPosts('-1');">
+               <div id="menu_posts" class="menu_btn_container shelfglow">
+                  <div class="menu_btn" onmousedown="GoToPosts('-1')">
                      Posts
                   </div>
                </div>
-               <div id="menu_projects" class="menu_btn_container shelfglow" active="false">
-                  <div class="menu_btn" onmousedown="GoToProjects();">
+               <div id="menu_projects" class="menu_btn_container shelfglow">
+                  <div class="menu_btn" onmousedown="GoToProjects()">
                      Projects
                   </div>
                </div>
-               <div id="menu_resume" class="menu_btn_container shelfglow" active="false">
-                  <div class="menu_btn" onmousedown="GoToResume();">
+               <div id="menu_resume" class="menu_btn_container shelfglow">
+                  <div class="menu_btn" onmousedown="GoToResume()">
                      Resume
                   </div>
                </div>
@@ -55,13 +55,13 @@
 
          <div id="body_home" class="body_container">
             <img src="profile.jpg" height="120px" width="120px" style="float: left; margin-right: 0.75em; margin-bottom: 0.75em;"></img>
-            <p>Hi, I'm Ian. I'm an Iowan programmer with an ambition for software design and user interaction. I'm currently finishing out my B.S. degree in Computer Science at the University of Iowa, and I'm looking for employment in the Midwest shortly after graduating in December of 2019.</p>
+            <p>Hi, I'm Ian. I'm an Iowan programmer with an ambition for software design and user interface. I'm currently finishing out my B.S. degree in Computer Science at the University of Iowa, and I'm looking for employment in the Midwest shortly after graduating in December of 2019.</p>
             <br/>
             <p>This page is a small hub for everything you need to know about me, but if you have any questions for me (professional or otherwise), please feel free to send me an email at <a href="mailto:iangradert@gmail.com">iangradert@gmail.com</a>.</p>
             <br/>
-            <p>I greatly enjoy various forms of media; jazz and metal, shooter games and puzzle games, YouTube skits, 70s/80s cinema, and more. I have monthly features talking about my top picks for games and music. These posts detail why I'm enjoying that particular work and why you should too. I'm also still growing as a programmer and software developer - learning new tricks, refining my style, and adopting new practices. Posts about programming will also show up in the Projects section if they're project-related.</p>
+            <p>I greatly enjoy various forms of media; jazz and metal, shooter games and puzzle games, YouTube skits, 70s/80s cinema, and more. I have monthly features talking about my top picks for games and music. These posts detail why I'm enjoying that particular work and why you should, too. I'm also still growing as a programmer and software developer - learning new tricks, refining my style, and adopting new practices.</p>
             <br/>
-            <p>I currently have one project in active development, and several others on the sketchboard, along with a plethora of other ideas that will likely never come to fruition. My current project is inspired by the likes of the old DOS games NetHack and Rogue, and draws heavily on fantasy elements from Dungeons & Dragons. Currently, it's titled Catacombs of Halfwind Keep. You can find more information about it in the projects section.</p>
+            <p>I currently have one project in active development, and several others on the sketchboard, along with a plethora of other ideas that will likely never come to fruition. The current project is a 2D game inspired by the likes of the old DOS games NetHack and Rogue, and draws heavily on fantasy elements from Dungeons & Dragons and Lord of the Rings. It's envisioned to be a cooperative, multi-player experience of diving into dungeons and caves, fighting off monsters and baddies, and finding cool loot along the way to make your character stronger the deeper you go. Currently, it's titled Catacombs of Halfwind Keep. You can find more information about it in the projects section.</p>
          </div>
 
          <div id="body_posts" class="body_container">
@@ -235,12 +235,14 @@
 
       </div>
 
+
       <div id="pad_left" class="pad"></div>
       <div id="pad_right" class="pad"></div>
 
+
       <div id="footer">
          <div style="float: left; grid-column: 1;">
-            &#x24B8; no one, actually. <br/>Not that there's anything cool here anyways.
+            &copy; no one, actually<br/>Steal as much as you want, like a true programmer
          </div>
          <div style="float: right; text-align: right; grid-column: 2;">
             Email: <a href="mailto:iangradert@gmail.com">
@@ -272,7 +274,6 @@
 		}
 
 		document.addEventListener('DOMContentLoaded', (e) => {
-			console.log("DOMContentLoaded");
 			var section = getUrlParam("section", "home")
 			var q = getUrlParam("q", "latest")
 
@@ -292,20 +293,8 @@
 		})
 
       $(document).ready(function() {
-			console.log("Document ready")
          // Reset filters and items storable betweeen sessions
          $(".filter_cb").prop("checked", false)
-
-         // Pivot element
-         var pivot = false
-
-         $(".shelfglow").hover(function() {
-            $(this).css("box-shadow", "0px 1px white")
-         }, function () {
-            if ($(this).attr("active") == "false") {
-               $(this).css("box-shadow", "0px 1px gray")
-            }
-         })
 
          $(".filter_label").click(function() {
             var myCB = "#" + $(this).attr("id") + "_cb"
@@ -352,8 +341,8 @@
          $(".body_container").css("display", "none")
          $("#body_home").css("display", "block")
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
-         $("#name").attr("active", "true").css("box-shadow", "0px 1px white")
+         $(".shelfglow").css("border-bottom-color", "gray")
+         $("#name").css("border-bottom-color", "white")
       }
 
       function GoToPosts(postID) {
@@ -367,16 +356,16 @@
          $(".body_container").css("display", "none")
          $("#body_posts").css("display", "grid")
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
-         $("#menu_posts").attr("active", "true").css("box-shadow", "0px 1px white")
+         $(".shelfglow").css("border-bottom-color", "gray")
+         $("#menu_posts").css("border-bottom-color", "white")
       }
 
       function GoToProjects(projectID) {
          $(".body_container").css("display", "none")
          $("#body_projects").css("display", "block")
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
-         $("#menu_projects").attr("active", "true").css("box-shadow", "0px 1px white")
+         $(".shelfglow").css("border-bottom-color", "gray")
+         $("#menu_projects").css("border-bottom-color", "white")
 
 			ShowProject(projectID)
       }
@@ -385,8 +374,8 @@
          $(".body_container").css("display", "none")
          $("#body_resume").css("display", "block")
 
-         $(".shelfglow").attr("active", "false").css("box-shadow", "0px 1px gray")
-         $("#menu_resume").attr("active", "true").css("box-shadow", "0px 1px white")
+         $(".shelfglow").css("border-bottom-color", "gray")
+         $("#menu_resume").css("border-bottom-color", "white")
       }
    </script>
 </body>
