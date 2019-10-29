@@ -343,6 +343,11 @@
 
          $(".shelfglow").css("border-bottom-color", "gray")
          $("#name").css("border-bottom-color", "white")
+
+			// Update URL
+			history.replaceState({
+				section: "home"
+			}, "home", "index.html?section=home")
       }
 
       function GoToPosts(postID) {
@@ -376,6 +381,11 @@
 
          $(".shelfglow").css("border-bottom-color", "gray")
          $("#menu_resume").css("border-bottom-color", "white")
+
+			// Update URL
+			history.replaceState({
+				section: "resume"
+			}, "resume", "index.html?section=resume")
       }
    </script>
 </body>

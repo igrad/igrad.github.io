@@ -92,6 +92,11 @@ function ShowPost(postID) {
 
 	// Load HTML of post to the screen in iframe
 	$("#posts_body").attr("src", "posts\\" + postID + ".html")
+
+	// Update url for easy copy-paste
+	history.replaceState({
+		section: "posts"
+	}, "home", "index.html?section=posts&q=" + postID)
 }
 
 function ShowMostRecentPost() {

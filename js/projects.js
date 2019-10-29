@@ -9,4 +9,9 @@ function ShowProject(projectID) {
 
 	// Open project article
 	$("#project_" + projectID).css("display", "block")
+
+	// Update URL
+	history.replaceState({
+		section: "projects"
+	}, "projects", "index.html?section=projects&q=" + projectID)
 }
