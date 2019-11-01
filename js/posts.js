@@ -35,6 +35,13 @@ var catalog = [
       month: 10,
       year: 2019,
       tags: ["programming"]
+   },
+   {  id: 5,
+      title: "[Game] Destiny 2",
+      date: "October 31, 2019",
+      month: 10,
+      year: 2019,
+      tags: ["gaming"]
    }
 ]
 
