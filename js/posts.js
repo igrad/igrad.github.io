@@ -42,6 +42,13 @@ var catalog = [
       month: 10,
       year: 2019,
       tags: ["gaming"]
+   },
+   {  id: 6,
+      title: "[Game] CoD Modern Warfare",
+      date: "November 14, 2019",
+      month: 11,
+      year: 2019,
+      tags: ["gaming"]
    }
 ]
 
