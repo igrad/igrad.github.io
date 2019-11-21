@@ -51,7 +51,7 @@ var catalog = [
       tags: ["gaming"]
    },
 	{	id: 7,
-		title: "[Song] \"Blue in Green\" by Miles Davis",
+		title: "[Song] \"Blue in Green\" by Miles Davis"
 		date: "November 19, 2019",
 		month: 11,
 		year: 2019,
