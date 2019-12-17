@@ -64,6 +64,14 @@ var catalog = [
       month: 12,
       year: 2019,
       tags: ["music"]
+   },
+   {
+      id: 9,
+      title: "The Post-Grad Job Hunt",
+      date: "December 17, 2019",
+      month: 12,
+      year: 2019,
+      tags: ["programming"]
    }
 ]
 
