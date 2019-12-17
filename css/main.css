@@ -20,6 +20,11 @@ Essentially the "template" for the page, though we're all on one page in this pa
 #shelf_wrapper {
    position: relative;
 
+   background-color: var(--page-shelf-bg);
+
+   margin: -8px;
+   margin-bottom: 0px;
+
    grid-row: 1;
    grid-column: 1 / 4;
 }
@@ -29,6 +34,11 @@ Essentially the "template" for the page, though we're all on one page in this pa
    display: grid;
 
    width: 100%;
+
+   color: var(--page-shelf-font);
+
+   margin: 8px;
+   margin-bottom: 0px;
 
    columns: 2;
    grid-template-columns: 25% 75%;
@@ -80,7 +90,6 @@ Essentially the "template" for the page, though we're all on one page in this pa
    height: min-content;
 
    font-size: 1.75em;
-   color: #bbbbbb;
    text-align: center;
 }
 
@@ -130,7 +139,7 @@ Essentially the "template" for the page, though we're all on one page in this pa
 
    grid-template-columns: min-content flex min-content;
 
-   background-color: #2a2a2a;
+   background-color: var(--page-footer-bg);
 
    font-size: 0.8em;
 }

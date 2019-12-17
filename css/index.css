@@ -1,13 +1,24 @@
 /* index.css
 Higher-level stylization across the whole site, even outseide of the main wrapper. This also contains some of the persistent stylings used across different subsection types. */
+
+:root {
+   --page-bg-color: #0c0e13;
+   --page-font-color: #dddddd;
+
+   --page-shelf-bg: #1a222f;
+   --page-shelf-font: #eeeeee;
+
+   --page-footer-bg: #08090d;
+}
+
 body {
    width: calc(100% - 16px);
    height: calc(100% - 16px);
 
    margin: 8px;
 
-   background-color: #1a1a1a;
-   color: #dddddd;
+   background-color: var(--page-bg-color);
+   color: var(--page-font-color);
 
    cursor: default;
 

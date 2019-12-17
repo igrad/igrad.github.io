@@ -56,7 +56,15 @@ var catalog = [
 		month: 11,
 		year: 2019,
 		tags: ["music"]
-	}
+   },
+   {
+      id: 8,
+      title: "[Song] \"Pirate Song\" by Joel VanderHeyden",
+      date: "December 16, 2019",
+      month: 12,
+      year: 2019,
+      tags: ["music"]
+   }
 ]
 
 
