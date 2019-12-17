@@ -125,7 +125,7 @@ function ShowPost(postID) {
 	// Update url for easy copy-paste
 	history.replaceState({
 		section: "posts"
-	}, "home", "index.html?section=posts&q=" + postID)
+	}, "posts", "index.html?section=posts&q=" + postID)
 }
 
 function ShowMostRecentPost() {
