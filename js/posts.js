@@ -72,6 +72,14 @@ var catalog = [
       month: 12,
       year: 2019,
       tags: ["programming"]
+   },
+   {
+      id: 10,
+      title: "[Game] Divinity Original Sin 2",
+      date: "December 26, 2019",
+      month: 12,
+      year: 2019,
+      tags: ["gaming"]
    }
 ]
 
