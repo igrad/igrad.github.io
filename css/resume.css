@@ -1,8 +1,0 @@
-/* resume.css
-   Stylization specifically for the resume subsection */
-#pdf_wrapper {
-   position: relative;
-
-   width: 100%;
-   height: calc(100% - 1em);
-}

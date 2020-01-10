@@ -2,19 +2,11 @@
 Higher-level stylization across the whole site, even outseide of the main wrapper. This also contains some of the persistent stylings used across different subsection types. */
 
 :root {
-   --page-bg-color: #0c0e13;
+   --page-bg-color: rgba(12, 14, 19, 1);
    --page-font-color: #dddddd;
-
-   --page-shelf-bg: #1a222f;
-   --page-shelf-font: #eeeeee;
-
-   --page-footer-bg: #08090d;
 }
 
 body {
-   width: calc(100% - 16px);
-   height: calc(100% - 16px);
-
    margin: 8px;
 
    background-color: var(--page-bg-color);
@@ -22,10 +14,12 @@ body {
 
    cursor: default;
 
-   font-size: 1em;
+   font-size: 1.1em;
+   line-height: 1.5em;
    font-family: Palatino Linotype;
+   text-align: justify;
 
-   overflow: hidden;
+   overflow-x: hidden;
 }
 
 a {
@@ -36,48 +30,208 @@ a:visited {
    color: darkslateblue;
 }
 
-.pageframe {
-   width: 100%;
-   height: 100%;
-}
-
-
-
-/* Reusable stylings across multiple subsections */
-/* Article subsection headers */
-.subsection_header {
-   font-weight: bold;
-   font-size: 1.5em;
-}
-
-/* Large quotes in posts or project details */
-.big_quote {
-   font-style: italic;
-   font-size: 1.3em;
-   text-align: center;
-}
-
-.code_block {
-   width: calc(100% - 1em - 2px);
-
-   border: 1px solid gray;
-   border-radius: 3px;
-
-   padding: 0.5em;
-
-   background-color: #2f2f2f;
-
-   font-family: Courier;
-}
-
-code {
-   font-family: Courier;
-}
-
 bold {
    font-weight: bold;
 }
 
 italic {
    font-style: italic;
+}
+
+.big_quote {
+   font-style: italic;
+   font-size: 1.3em;
+   text-align: center;
+}
+
+
+
+/* Background design */
+#wave-container {
+   position: absolute;
+   display: block;
+
+   width: 1500px;
+   height: 306px;
+
+   margin: -8px;
+
+   right: 0%;
+
+   z-index: -1;
+}
+
+#bg-wave-1 {
+   position: absolute;
+   display: block;
+
+   width: 100%;
+   
+   margin-top: -200px;
+
+   padding: 200px 0;
+
+   background: #12151b;
+
+   transform: skew(0deg, 13deg) translateY(-20%);
+}
+
+#bg-wave-2 {
+   position: absolute;
+   display: block;
+   
+   width: 100%;
+
+   margin-top: -250px;
+
+   padding: 200px 0;
+
+   background-color: #1c2027;
+
+   transform: skew(0deg, 20deg) translateY(-30%);
+}
+
+#wave2-container {
+   position: absolute;
+   display: block;
+
+   width: 2000px;
+   height: 370px;
+
+   margin: -8px;
+
+   left: 0%;
+
+   z-index: -1;
+
+   overflow: hidden;
+
+   transform: translateY(-95%);
+}
+
+#bg-wave-3 {
+   position: absolute;
+   display: block;
+
+   width: 100%;
+   
+   margin-top: -263px;
+
+   padding: 200px 0;
+
+   background: #12151b;
+
+   transform: skew(0deg, 10deg) translateY(110%);
+}
+
+#bg-wave-4 {
+   position: absolute;
+   display: block;
+   
+   width: 100%;
+
+   margin-top: -116px;
+
+   padding: 200px 0;
+
+   background-color: #1c2027;
+
+   transform: skew(0deg, 20deg) translateY(120%);
+}
+
+
+
+/* Menu */
+#menu {
+   position: fixed;
+   display: grid;
+
+   width: 100%;
+   height: 2em;
+   
+   margin: -8px;
+   padding: 8px 0;
+
+   grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+   font-family: roboto;
+
+   opacity: 100%;
+
+   user-select: none;
+
+   z-index: 99;
+}
+
+.menu-btn-wrapper {
+   cursor: pointer;
+
+   color: var(--page-font-color);
+
+   text-shadow: none;
+}
+
+.menu-btn-wrapper:hover {
+   color: white;
+   text-shadow: 0 0 12px white;
+}
+
+.menu-btn {
+   position: relative;
+
+   margin: auto;
+
+   text-align: center;
+
+   line-height: 1em;
+
+   top: 50%;
+   transform: translateY(-50%);
+
+   font-weight: 300;
+}
+
+#menu-name {
+   font-size: 1.5em;
+
+   line-height: 1.5em;
+
+   font-weight: 300;
+}
+
+
+
+/* Main content */
+.content {
+   position: relative;
+   display: block;
+
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+#welcome-blurb {
+   position: relative;
+   display: grid;
+
+   width: 50%;
+   min-width: 600px;
+
+   margin-left: auto;
+   margin-right: auto;
+
+   grid-template-columns: min-content auto;
+}
+
+#welcome-blurb div div {
+   position: relative;
+   display: block;
+
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+#home {
+   position: relative;
+   display: block;
 }
