@@ -27,7 +27,7 @@ a {
 }
 
 a:visited {
-   color: darkslateblue;
+   color: rgb(61, 102, 105);
 }
 
 bold {
@@ -233,7 +233,11 @@ italic {
    transform: translateY(-50%);
 }
 
-#home {
-   position: relative;
-   display: block;
+#resume {
+   display: grid;
+
+   height: 800px;
+
+   grid-template-rows: min-content auto min-content;
+   grid-auto-flow: row;
 }
