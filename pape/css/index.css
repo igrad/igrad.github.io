@@ -1,23 +1,16 @@
-:root {
-   --parallax-bg1-width: 1500;
-   --parallax-bg1-height: 943;
-}
-
-
 /* Persistent elements */
 body {
    background-color: black;
-
-   height: 100%;
    
    margin: 0px;
 
    font-family: -system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
    font-size: 1.1em;
+   line-height: 1.5em;
    color: white;
    text-align: justify;
 
-   overflow-x: hidden;
+   overflow-y: auto;
 }
 
 
@@ -76,16 +69,16 @@ body {
 
 
 
+/* Main chunks */
 .main-wrapper {
    height: 100vh;
 
+   background-color: black;
+
    overflow-x: hidden;
-   overflow-y: auto;
 
    perspective: 4px;
 }
-
-
 
 .section {
    position: relative;
@@ -97,7 +90,7 @@ body {
 
 
 
-/* Record parallax image */
+/* Parallax scrolling classes */
 .parallax::after {
    content: " ";
 
@@ -111,7 +104,16 @@ body {
    left: 50%;
    margin-left: -50vw;
 
-   z-index: -1;
+   z-index: -99;
+}
+
+#logo {
+   position: absolute;
+
+   left: 50%;
+   margin-left: -400px;
+
+   top: 5%;
 }
 
 .bg1::after {
@@ -121,24 +123,154 @@ body {
    transform: translateZ(-4px) translateY(3.2em) scale(2);
    -moz-transform: translateZ(-4px) translateY(3.2em) scale(2);
    transform-origin: bottom;
+
+   z-index: -99;
 }
 
-
-
 .static {
+   display: relative;
+
    background-color: #222222;
 
    height: min-content;
+
+   padding-top: 1em;
+   padding-bottom: 1em;
+
+   margin-top: -3px;
 }
 
 
 
-/* Main content */
-#content1 {
+/* ABOUT block */
+#about {
    display: grid;
+   position: relative;
+
+   grid-template-columns: 10% min-content auto 10%;
+   grid-template-rows: min-content;
+
+   z-index: 5;
+}
+
+#about-inner {
+   display: grid;
+
+   height: 300px;
+
+   margin-left: 1.5em;
+   
+   grid-template-rows: auto min-content auto;
+   grid-auto-flow: row;
+}
+
+#about-inner h1 {
+   font-weight: lighter;
+
+   font-size: 2em;
+}
+
+#about-text {
+   padding-left: 1.5em;
+}
+
+#about-bg-1 {
    position: absolute;
+   display: block;
 
-   top: 50vh;
+   transform: translateX(-337px);
 
-   grid-template-columns: 15% auto 15%;
+   z-index: -1;
+}
+
+#about-bg-1 #rect {
+   width: 310px;
+   height: 310px;
+
+   transform: rotate(15deg);
+
+   background-color: gray;
+}
+
+#about-bg-2 {
+   position: absolute;
+   display: block;
+
+   transform: translateX(-337px);
+
+   z-index: -2;
+}
+
+#about-bg-2 #rect {
+   width: 310px;
+   height: 310px;
+
+   transform: rotate(23deg);
+
+   background-color: #333333;
+}
+
+
+
+/* SAMPLES block */
+#samples-wrapper {
+   height: 100vh;
+
+   background-image: url("../media/lights-gif.gif");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+
+   transform-style: flat;
+}
+
+#samples {
+   position: relative;
+   display: grid;
+
+   height: 100%;
+
+   grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+   grid-auto-flow: column;
+}
+
+#samples h1 {
+   justify-self: center;
+
+   font-weight: lighter;
+
+   font-size: 3em;
+
+   user-select: none;
+
+   text-shadow: 0px 3px 6px black;
+}
+
+.sample {
+   width: 40vw;
+   min-width: 500px;
+}
+
+.sample iframe {
+   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.sample-odd {
+   float: right;
+}
+
+.sample-even {
+   float: left;
+}
+
+
+
+
+#content2 {
+   display: grid;
+   position: relative;
+
+   grid-template-columns: 10% auto 10%;
+
+   transform-style: flat;
 }
