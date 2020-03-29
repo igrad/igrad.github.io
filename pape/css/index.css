@@ -13,6 +13,23 @@ body {
    overflow-y: auto;
 }
 
+.sleek-header {
+   text-align: center;
+
+   font-weight: lighter;
+
+   font-size: 3em;
+
+   user-select: none;
+
+   text-shadow: 0px 3px 6px black;
+}
+
+#padder {
+   height: 100%;
+   width: 1px;
+}
+
 
 
 /* Menu */
@@ -214,7 +231,8 @@ body {
 
 /* SAMPLES block */
 #samples-wrapper {
-   height: 100vh;
+   height: min-content;
+   min-height: 100vh;
 
    background-image: url("../media/lights-gif.gif");
    background-repeat: no-repeat;
@@ -222,6 +240,8 @@ body {
    background-attachment: fixed;
 
    transform-style: flat;
+
+   padding-bottom: 1em;
 }
 
 #samples {
@@ -234,21 +254,13 @@ body {
    grid-auto-flow: column;
 }
 
-#samples h1 {
-   justify-self: center;
-
-   font-weight: lighter;
-
-   font-size: 3em;
-
-   user-select: none;
-
-   text-shadow: 0px 3px 6px black;
-}
-
 .sample {
-   width: 40vw;
+   width: 50vw;
    min-width: 500px;
+   max-width: 1000px;
+
+   margin-top: 1em;
+   margin-bottom: 1em;
 }
 
 .sample iframe {
@@ -257,20 +269,78 @@ body {
 
 .sample-odd {
    float: right;
+   margin-right: 2em;
 }
 
 .sample-even {
    float: left;
+   margin-left: 2em;
 }
 
 
 
-
+/* BOOKINGS block */
 #content2 {
    display: grid;
    position: relative;
 
-   grid-template-columns: 10% auto 10%;
+   grid-template-columns: 10% 1fr 10%;
 
    transform-style: flat;
+}
+
+#contact-form-wrapper {
+   display: grid;
+
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr auto;
+
+   grid-auto-flow: row;
+
+   column-gap: 4px;
+}
+
+.form-label {
+   font-size: 1.3em;
+
+   line-height: 1.4em;
+
+   user-select: none;
+
+   text-shadow: 0px 2px 2px black;
+}
+
+.form-field {
+   border: 1px solid #111111;
+   border-radius: 6px;
+
+   padding: 6px;
+
+   font-family: inherit;
+
+   width: calc(100% - 14px);
+}
+
+.form-field-small {
+   height: 1.2em;
+
+   line-height: 1em;
+
+   resize: none;
+}
+
+.form-field-big {
+   height: 3em;
+
+   column-span: all;
+}
+
+
+
+#footer {
+   background-color: black;
+
+   white-space: nowrap;
+
+   text-align: center;
 }
