@@ -6,7 +6,13 @@ Higher-level stylization across the whole site, even outside of the main wrapper
    --page-font-color: #dddddd;
 }
 
+html {
+   height: 100%;
+}
+
 body {
+   height: 100%;
+
    margin: 8px;
 
    background-color: var(--page-bg-color);
@@ -95,8 +101,8 @@ italic {
    position: absolute;
    display: block;
 
-   width: calc(100% + 8px);
-   height: 370px;
+   width: calc(100vw + 8px);
+   min-height: 30vmin;
 
    margin: -8px;
 
@@ -106,16 +112,17 @@ italic {
 
    overflow: hidden;
 
-   transform: translateY(-5%);
+   transform: translateY(-90%);
 }
 
 #bg-wave-3 {
    position: absolute;
    display: block;
 
-   width: 100%;
+   width: 110%;
    
-   margin-top: -263px;
+   margin-left: calc(min(0px, (1920px - 100vw)/2));
+   margin-top: -249px;
 
    padding: 200px 0;
 
@@ -130,6 +137,7 @@ italic {
    
    width: 100%;
 
+   margin-left: calc(min(0px, (1920px - 100vw)/2));
    margin-top: -116px;
 
    padding: 200px 0;
@@ -207,8 +215,8 @@ italic {
    position: relative;
    display: block;
 
-   margin-left: 15%;
-   margin-right: 15%;
+   margin-left: 15vw;
+   margin-right: 15vw;
 }
 
 #welcome-blurb {
@@ -216,7 +224,6 @@ italic {
    display: grid;
 
    width: 50%;
-   /* min-width: 400px; */
 
    margin-left: auto;
    margin-right: auto;
@@ -224,8 +231,6 @@ italic {
    padding-right: 8px;
 
    grid-template-columns: min-content auto;
-
-   /* font-size: 2.5vmin; */
 }
 
 #profile-pic {
@@ -246,8 +251,11 @@ italic {
 #resume {
    display: grid;
 
-   height: 800px;
-
    grid-template-rows: min-content auto min-content;
    grid-auto-flow: row;
+}
+
+#resume-object {
+   min-height: 1124px;
+   width: 100%;
 }
