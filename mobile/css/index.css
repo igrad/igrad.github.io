@@ -1,5 +1,5 @@
 /* index.css
-Higher-level stylization across the whole site, even outside of the main wrapper. This also contains some of the persistent stylings used across different subsection types. */
+Higher-level stylization across the whole site, even outseide of the main wrapper. This also contains some of the persistent stylings used across different subsection types. */
 
 :root {
    --page-bg-color: rgba(12, 14, 19, 1);
@@ -51,10 +51,10 @@ italic {
    position: absolute;
    display: block;
 
-   width: 1500px;
+   width: 100vw;
    height: 306px;
 
-   margin: -8px;
+   /* margin: -8px; */
 
    right: 0%;
 
@@ -106,7 +106,7 @@ italic {
 
    overflow: hidden;
 
-   transform: translateY(-5%);
+   transform: translateY(-85%);
 }
 
 #bg-wave-3 {
@@ -152,12 +152,15 @@ italic {
    margin: -8px;
    padding: 8px 0;
 
-   grid-template-columns: 1.5fr 1fr 1fr 1fr;
+   grid-template-columns: auto auto auto auto;
+
+   background-color: rgba(8,9,12,1);
+   border-bottom: 2px solid rgb(44, 48, 65);
 
    font-family: roboto;
-   font-size: 1.2vh;
+   font-size: 0.5em;
 
-   opacity: 100%;
+   white-space: nowrap;
 
    user-select: none;
 
@@ -207,15 +210,15 @@ italic {
    position: relative;
    display: block;
 
-   margin-left: 15%;
-   margin-right: 15%;
+   margin-left: 5%;
+   margin-right: 5%;
 }
 
 #welcome-blurb {
    position: relative;
    display: grid;
 
-   width: 50%;
+   width: 100%;
    /* min-width: 400px; */
 
    margin-left: auto;
@@ -229,8 +232,8 @@ italic {
 }
 
 #profile-pic {
-   width: 180px;
-   height: 180px;
+   width: 90px;
+   height: 90px;
 
    margin-right: 1em;
 }
@@ -239,15 +242,23 @@ italic {
    position: relative;
    display: block;
 
+   width: calc(90vw - 90px - 1em);
+
    top: 50%;
    transform: translateY(-50%);
+
+   font-size: 0.8em;
 }
 
 #resume {
    display: grid;
 
-   height: 800px;
+   /* height: 800px; */
 
    grid-template-rows: min-content auto min-content;
    grid-auto-flow: row;
+}
+
+#resume-img {
+   width: 90vw;
 }

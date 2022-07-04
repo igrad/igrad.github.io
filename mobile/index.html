@@ -6,17 +6,11 @@
    <meta name="viewport" content="width=device-width"/>
    <title>Ian Gradert</title>
 
-   <script>
-      if (screen.width <= 720) {
-         window.location = "mobile/index.html";
-      }
-   </script>
-
    <link rel="stylesheet" href="css/index.css">
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-   <script src="js/blurbs.js"></script>
+   <script src="../js/blurbs.js"></script>
 </head>
 
 <body>
@@ -40,16 +34,15 @@
       </div>
    </div>
 
-   <div style="height: 150px; width: 0px;"></div>
+   <div style="height: 50px; width: 0px;"></div>
    <div id="welcome-blurb">
-      <img id="profile-pic" src="profile.jpg"></img>
+      <img id="profile-pic" src="../profile.jpg"></img>
       <div id="blurb-text-wrapper">
          <div id="blurb-text">
          </div>
       </div>
    </div>
 
-   <br>
    <br>
 
    <div id="home" class="content">
@@ -72,8 +65,8 @@
    
    <div id="resume" class="content">
       <h1>Resume</h1>
-      <a href="Resume.pdf" download>PDF not displaying?</a>
-      <object data="Resume.pdf" type="application/pdf" style="min-height:100vh; width:100%"></object>
+      <a href="../Resume.pdf" download>Download as PDF</a>
+      <img id="resume-img" src="../Resume.jpg"></object>
    </div>
 
    <div id="wave2-container">
@@ -84,9 +77,6 @@
 
 
    <script>
-      var menuFaded = false
-      var menuFadePointMod = $("#welcome-blurb").position().top
-
       $(document).ready(function() {
          console.log("Document ready");
 
@@ -95,32 +85,6 @@
          $("#home").html(home);
          $("#programming").html(programming);
          $("#projects").html(projects);
-
-         // Menu hover functions
-         $("#menu").hover(function () {
-            if (window.scrollY > menuFadePointMod) {
-               $("#menu").animate({ opacity: "100%" }, 250)
-            }
-         }, function () {
-            if (window.scrollY > menuFadePointMod) {
-               $("#menu").animate({ opacity: "85%" }, 250)
-            }
-         })
-      })
-
-      // Scrolling controls some CSS on the menu
-      $(document).scroll(function () {
-         if (window.scrollY > menuFadePointMod && !menuFaded) {
-            menuFaded = true
-            $("#menu").animate({ 
-               opacity: "85%", 
-               'background-color': "rgba(8, 9, 12, 1)" }, 250)
-         } else if (window.scrollY <= menuFadePointMod && menuFaded) {
-            menuFaded = false
-            $("#menu").animate({
-               opacity: "100%",
-               'background-color': "rgba(8, 9, 12, 0)" }, 250)
-         } 
       })
 
       // Scroll to a point on the page
