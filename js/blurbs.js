@@ -14,6 +14,11 @@ let home = `
     send me an email at 
     <a href="mailto:iangradert@gmail.com">iangradert@gmail.com</a>.</p>
     
+<p>As mentioned above, I'm a native Iowan from the Quad Cities area, and 
+    a University of Iowa grad. I've been happily married since August 2018, 
+    and a proud father of a very large baby boy since July 2022. My family 
+    and I live in the Des Moines area.</p>
+
 <p>Outside of software development, I'm a huge fan of video games, music, 
     cinema, and table-top games. In fact, I have video games to thank for 
     introducing me to programming in the first place, way back when Call 
